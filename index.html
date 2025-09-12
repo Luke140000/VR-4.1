@@ -1,28 +1,51 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
     </head>
     <body>
         <a-scene>
             <a-camera>
     <a-cursor></a-cursor>
 </a-camera>
-<a-torus-knot color="#8c00ff" arc="360" p="2" q="7" radius="5" position= "3 11 -20" radius-tubular="0.1" animation="
+<a-torus-knot color="#8c00ff" arc="360" p="2" q="7" radius="5" position= "3 11 20" radius-tubular="0.1" animation="
 property: rotation;
 from: 0 0 0;
 to: 360 0 0;
 easing: easeInOutQuad;
 duration: 200; 
-loop: true;"></a-torus-knot>
+loop: true;"
+animation__2="
+property: scale;
+from: 1 1 1;
+to: 0 0 0;
+duration: 100; 
+startEvents: click;
+" 
+animation__3="
+property: position;
+from: 3 11 20;
+to: 3 11 -45;
+duration: 20000; 
+loop: true;
+dir: alternate;
+"
+></a-torus-knot>
 <a-dodecahedron color="#FF926B" radius=".5" position="-3 2 -5" animation="
 property: position;
 from: -3 2 -5;
-to: -3 2 -900;
+to: -3 2 -90;
 easing: linear;
-duration: 2000; 
+duration: 50000; 
 loop: true;
-dir: alternate;"></a-dodecahedron>
+dir: alternate;"
+animation__2="
+property: scale;
+from: 1 1 1;
+to: 0 0 0;
+duration: 100; 
+startEvents: click;
+"></a-dodecahedron>
 <a-icosahedron color="#000000" radius="1" position= "0 5 -6" animation="
 property: color;
 from: #000000;
@@ -34,17 +57,32 @@ animation__2="
 property: position;
 from: 0 5 -6;
 to: 10 5 -6;
-duration: 50; 
+duration: 5000; 
 loop: true;
-dir: alternate;"></a-icosahedron>
-<a-box position="0 1 -5" depth="1" height="1" width="1" color="red" animation="
+dir: alternate;"
+animation__3="
 property: scale;
 from: 1 1 1;
 to: 0 0 0;
 duration: 100; 
 startEvents: click;
+"></a-icosahedron>
+<a-box position="0 1 -5" depth="1" height="1" width="1" color="red" animation="
+property: scale;
+from: 1 1 1;
+to: 0 0 0;
+duration: 1000; 
+startEvents: click;
 easing: easeInCubic;
-"></a-box>
+" animation__2="
+property: position;
+from: 0 1 -5;
+to: 0 20 -5;
+duration: 2000; 
+loop: true;
+dir: alternate;
+"
+></a-box>
 <a-sphere position="3 3 -5" radius="0.5" color="blue" animation="
 property: position;
 from: 3 3 -5;
@@ -52,7 +90,14 @@ to: 3 -3 -5;
 duration: 1000; 
 loop: true;
 easing: easeInOutElastic;
-dir: alternate;"></a-sphere>
+dir: alternate;"
+animation__2="
+property: scale;
+from: 1 1 1;
+to: 0 0 0;
+duration: 100; 
+startEvents: click;
+"></a-sphere>
 <a-plane position="0 0 -1" rotation="-90 0 0" width="40" height="40" color="#ff5900"></a-plane>
         </a-box>
         </a-scene>
